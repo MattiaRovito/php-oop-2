@@ -9,7 +9,7 @@
 
 
 
-//? Svolgimento
+
 //* Il progetto è così strutturato: creiamo un file user.php dove andremo ad inserire delle tessere fedeltà, ognuna delle quali avrà delle agevolazioni. Dopodiché creiamo un secondo file, denominato user_plus.php che non sarà altro che il nostro "Employee.php", ovvero la classe figlio di user.php (classe genitore), dove inseriremo anche gli utenti premium, che avranno delle agevolazioni maggiori. Per collegare il tutto utilizzo il require_once 'user.php' all'interno di user_plus.php, e il require_once 'user_plus.php' all'interno di 'index.php'.
 
 
@@ -19,13 +19,13 @@ require_once 'user_plus.php';
 
 
 $UserOne = new NormalUser('Pippo', 'Rossi');
-$UserOne->setCard('Basic');
+$UserOne->setCard(1);
 
 $UserTwo = new NormalUser('Pluto', 'Verdi');
-$UserTwo->setCard('Silver');
+$UserTwo->setCard(2);
 
 $UserThree = new PremiumUser('Paperino', 'Gialli');
-$UserThree->setCard('Gold');
+$UserThree->setCard(3);
 
 
 
@@ -52,15 +52,15 @@ $UserThree->setCard('Gold');
 <body>
     
     <h2>
-        <?php echo "L'utente " . $UserOne->getFullName() . " ha la " . $UserOne->getCard() . ' card'; ?>
+        <?php echo "L'utente " . $UserOne->getFullName() . " ha la carta Basic, quindi ha diritto ad uno sconto del " . $UserOne->getCard() . '%'; ?>
     </h2>
 
     <h2>
-        <?php echo "L'utente " . $UserTwo->getFullName() . " ha la " . $UserTwo->getCard() . ' card'; ?>
+        <?php echo "L'utente " . $UserTwo->getFullName() . " ha la carta Silver, quindi ha diritto ad uno sconto del " . $UserTwo->getCard() . '%'; ?>
     </h2>
 
     <h2>
-        <?php echo "L'utente " . $UserThree->getFullName() . " ha la " . $UserThree->getCard() . ' card'; ?>
+        <?php echo "L'utente " . $UserThree->getFullName() . " ha la carta Gold, quindi ha diritto ad uno sconto del " . $UserThree->getCard() . '%'; ?>
     </h2>
 
 
