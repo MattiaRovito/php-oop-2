@@ -12,9 +12,5 @@ class PremiumUser extends NormalUser {
 
 
 
-
-
-
-
 }
 
