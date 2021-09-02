@@ -26,6 +26,7 @@ $UserTwo->setCard(2);
 
 $UserThree = new PremiumUser('Paperino', 'Gialli');
 $UserThree->setCard(3);
+$UserThree->setPremio('più un prodotto gratuito')
 
 
 
@@ -60,7 +61,7 @@ $UserThree->setCard(3);
     </h2>
 
     <h2>
-        <?php echo "L'utente " . $UserThree->getFullName() . " ha la carta Gold, quindi ha diritto ad uno sconto del " . $UserThree->getCard() . '%'; ?>
+        <?php echo "L'utente " . $UserThree->getFullName() . " ha la carta Gold, quindi ha diritto ad uno sconto del " . $UserThree->getCard() . '% ' . $UserThree->getPremio() ; ?>
     </h2>
 
 

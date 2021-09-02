@@ -8,12 +8,15 @@ require_once 'user.php';
 
 class PremiumUser extends NormalUser {
 
-    public $sconto;
+    public $premio;
 
-    // function __construct($_name, $_surname){
-    //     parent::__construct($_name, $_surname);
-        // $this->card = 'Gold';
-    // }
+    public function setPremio($_premio){
+        $this->premio = $_premio;
+    }
+
+    public function getPremio(){
+        return $this->premio;
+    }
 
 
 }
