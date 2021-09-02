@@ -13,8 +13,23 @@
 //* Il progetto è così strutturato: creiamo un file user.php dove andremo ad inserire dei prodotti presenti all'interno dello shop con degli utenti senza agevolazioni. Dopodiché creiamo un secondo file, denominato user_plus.php che non sarà altro che il nostro "Employee.php", ovvero la classe figlio di user.php (classe genitore), dove inseriremo anche gli utenti premium, che avranno delle agevolazioni. Per collegare il tutto utilizzo il require_once 'user.php' all'interno di user_plus.php, e il require_once 'user_plus.php' all'interno di 'index.php'.
 
 
+require_once 'user.php';
+// require_once 'user_plus.php';
 
-require_once 'user_plus.php';
+
+
+$UserOne = new NormalUser('Pippo', 'Rossi');
+$UserOne->setCard('Basic');
+
+$UserTwo = new NormalUser('Pluto', 'Verdi');
+$UserTwo->setCard('Silver');
+
+$UserThree = new NormalUser('Paperino', 'Gialli');
+$UserThree->setCard('Gold');
+
+
+
+
 
 
 ?>
@@ -36,5 +51,19 @@ require_once 'user_plus.php';
 </head>
 <body>
     
+    <h2>
+        <?php echo "L'utente " . $UserOne->getFullName() . " ha la " . $UserOne->getCard() . ' card'; ?>
+    </h2>
+
+    <h2>
+        <?php echo "L'utente " . $UserTwo->getFullName() . " ha la " . $UserTwo->getCard() . ' card'; ?>
+    </h2>
+
+    <h2>
+        <?php echo "L'utente " . $UserThree->getFullName() . " ha la " . $UserThree->getCard() . ' card'; ?>
+    </h2>
+
+
+
 </body>
 </html>
